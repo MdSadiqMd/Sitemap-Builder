@@ -28,5 +28,5 @@ func Get(urlString string) []string {
 
 	base := baseUrl.String()
 	pages := Hrefs(bodyReader, base)
-	return pages
+	return Filter(base, pages)
 }
