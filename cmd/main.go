@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/url"
 
-	href "github.com/MdSadiqMd/Href-Parser/pkg"
+	"github.com/MdSadiqMd/Sitemap-Builder/pkg"
 )
 
 func main() {
@@ -27,16 +27,15 @@ func main() {
 	}
 
 	bodyReader := bytes.NewReader(bodyBytes)
-	links, _ := href.Parse(bodyReader)
-	for _, l := range links {
-		fmt.Println(l)
-	}
-
 	reqUrl := resp.Request.URL
 	baseUrl := &url.URL{
 		Scheme: reqUrl.Scheme,
 		Host:   reqUrl.Host,
 	}
+
 	base := baseUrl.String()
-	fmt.Println(base)
+	pages := pkg.Hrefs(bodyReader, base)
+	for _, page := range pages {
+		fmt.Println(page)
+	}
 }
