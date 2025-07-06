@@ -2,12 +2,18 @@ package pkg
 
 import "strings"
 
-func Filter(base string, links []string) []string {
+func Filter(links []string, keepFn func(string) bool) []string {
 	var ret []string
 	for _, link := range links {
-		if strings.HasPrefix(link, base) {
+		if keepFn(link) {
 			ret = append(ret, link)
 		}
 	}
 	return ret
+}
+
+func withPrefix(pfx string) func(string) bool {
+	return func(link string) bool {
+		return strings.HasPrefix(link, pfx)
+	}
 }
