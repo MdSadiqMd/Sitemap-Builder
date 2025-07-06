@@ -8,7 +8,7 @@ import (
 	"github.com/MdSadiqMd/Sitemap-Builder/pkg"
 )
 
-const xmlns = "https://www.sitemaps.org/schemas/sitemap/0.9"
+const XMLNS_CONST = "https://www.sitemaps.org/schemas/sitemap/0.9"
 
 type Loc struct {
 	Value string `xml:"loc"`
@@ -22,7 +22,7 @@ type UrlSet struct {
 func GenerateSitemap(url string, maxDepth int, writer io.Writer) error {
 	pages := pkg.BFS(url, maxDepth)
 	toXml := UrlSet{
-		Xmlns: xmlns,
+		Xmlns: XMLNS_CONST,
 	}
 	for _, page := range pages {
 		toXml.Urls = append(toXml.Urls, Loc{page})
