@@ -1,0 +1,4 @@
+github.com/MdSadiqMd/Href-Parser v0.0.0-20250704195124-e885a0a8952c h1:/45Mk1yHQ1oJ6PlzQLI/xMsCvmZMG9mxgLx2Gv2SLbU=
+github.com/MdSadiqMd/Href-Parser v0.0.0-20250704195124-e885a0a8952c/go.mod h1:KZ3zQvWK674obqHbpJIclSncl+OYFuXgwN4zjcxEQAY=
+golang.org/x/net v0.41.0 h1:vBTly1HeNPEn3wtREYfy4GZ/NECgw2Cnl+nK6Nz3uvw=
+golang.org/x/net v0.41.0/go.mod h1:B/K4NNqkfmg07DQYrbwvSluqCJOOXwUjeb/5lOisjbA=
